@@ -203,6 +203,7 @@ require 'functions.php';
                                     </div>
                                     <div class="align-middle text-end">
                                         <a href="exporthistoryPdf.php"><button type="button" class="btn btn-secondary btn-sm">Print PDF</button></a>
+                                        <a href="exporthistoryExcel.php"><button type="button" class="btn btn-secondary btn-sm">Print Excel</button></a>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center p-2 pb-2 overflow-y-scroll" style="max-height: 30rem;">
@@ -240,7 +241,7 @@ require 'functions.php';
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Ahsa & Alya</span>
+                        <span>Copyright &copy; SIKOMEDI 2023</span>
                     </div>
                 </div>
             </footer>
@@ -284,8 +285,6 @@ require 'functions.php';
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
 </body>
 
 </html>

@@ -73,7 +73,7 @@ $name = $_GET["name"];
     <!-- Page Wrapper -->
     <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" style = "background : #E74926" id="accordionSidebar">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?name=<?=$name?>">
                 <div class="sidebar-brand-icon">
@@ -92,9 +92,15 @@ $name = $_GET["name"];
             <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="submission.php?name=<?=$name?>">
-                  <i class="bi bi-speedometer"></i>
+                    <i class="bi bi-file-earmark-plus"></i>
                     <span>Submissions</span></a>
             </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
         </ul>
         <!-- End of Sidebar -->
     <!-- Content Wrapper -->
@@ -208,7 +214,7 @@ $name = $_GET["name"];
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Sephele 2023</span>
+                        <span>Copyright &copy; SIKOMEDI 2023</span>
                     </div>
                 </div>
             </footer>

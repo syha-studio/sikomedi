@@ -22,6 +22,7 @@ $name = $_GET["name"];
     <meta name="author" content="">
     <title>Dashboard Member - SIKOMEDI</title>
     <!-- Custom fonts for this template-->
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/a41efb1c83.js" crossorigin="anonymous"></script>
@@ -35,7 +36,7 @@ $name = $_GET["name"];
     <!-- Page Wrapper -->
     <div id="wrapper">
     <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav  sidebar sidebar-dark accordion" style = "background : #E74926" id="accordionSidebar">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?name=<?=$name?>">
                 <div class="sidebar-brand-icon">
@@ -54,9 +55,15 @@ $name = $_GET["name"];
             <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="submission.php?name=<?=$name?>">
-                  <i class="bi bi-speedometer"></i>
+                    <i class="bi bi-file-earmark-plus"></i>
                     <span>Submissions</span></a>
             </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
         </ul>
         <!-- End of Sidebar -->
     <!-- Content Wrapper -->
@@ -105,7 +112,7 @@ $name = $_GET["name"];
                     <div class="row">
                     <!-- Total Post Requested -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -159,7 +166,7 @@ $name = $_GET["name"];
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Sephele 2023</span>
+                        <span>Copyright &copy; SIKOMEDI 2023</span>
                     </div>
                 </div>
             </footer>

@@ -37,26 +37,26 @@ if ( isset($_POST["submit"])){
     <!-- Custom fonts for this template-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/a41efb1c83.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="css/style.css" rel="stylesheet">
 </head>
-<body class="bg-gradient-primary">
+<body style = "background : #E74926">
     <div class="container p-5">
         <!-- Outer Row -->
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-10 col-md-10">
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
-                        <div class="row p-1" style="background-color : #ADD8E6">
+                        <div class="row p-1" style = "background : #FADBD5">
                             <div class="col d-flex justify-content-start pt-3 ps-4 pe-4" >
-                                <a href="login.php"><button type="button" class="btn btn-light"><i class="bi bi-back"></i> Kembali</button></a>
+                                <a href="login.php"><button type="button" class="btn" style = "background : #FFFFFE; color : #010B13"><i class="bi bi-back"></i> Kembali</button></a>
                             </div>
                         </div>
                         <!-- Nested Row within Card Body -->
                         <div class="row justify-content-center">
-                            <div class="col" style="background-color : #ADD8E6">
+                            <div class="col" style = "background : #FADBD5">
                                 <div class="pt-3 pb-4 ps-4 pe-4">
                                     <div class="text-center">
                                         <p class="h3 text-gray-900 mb-4"  style="font-weight:800">Sistem Kontrol  Media Informasi - Fasilkom</p>
@@ -104,7 +104,7 @@ if ( isset($_POST["submit"])){
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-center mb-3">
-                                            <button type="submit" name="submit" class="btn btn-secondary">Register</button>
+                                            <button type="submit" name="submit" class="btn" style = "background : #E74926; color : white">Register</button>
                                             </div>
                                         </form>
                                         <!-- Akhir Formulir -->
@@ -118,12 +118,5 @@ if ( isset($_POST["submit"])){
             </div>
         </div>
     </div>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
 </body>
 </html>

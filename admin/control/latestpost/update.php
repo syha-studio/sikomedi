@@ -153,7 +153,7 @@ if ( isset($_POST["submit"])){
                 </div>
                 <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Content Submissions</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Update Latest Post</h1>
                     </div>
                 <!-- Content Row -->
                     <!-- Formulir -->
@@ -195,7 +195,7 @@ if ( isset($_POST["submit"])){
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Ahsa & Alya</span>
+                        <span>Copyright &copy; SIKOMEDI 2023</span>
                     </div>
                 </div>
             </footer>

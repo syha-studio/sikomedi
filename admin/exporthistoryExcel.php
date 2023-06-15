@@ -26,16 +26,19 @@ while($row = mysqli_fetch_array($query)){
     $sheet->setCellValue('F'.$i,$row['judul']);
     $sheet->setCellValue('G'.$i,$row['status']);
     $i++;}
-$styleArray = [
-    'borders' => [
-        'allborder' => [
-            'borderstyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
-        ],
-    ],
-];
-$i = $i - 1;
-$sheet->getStyle('A1:D'.$i)->applyFromArray($styleArray);
-$tanggal = date('D m y');
-$writer = new Xlsx($spreadsheet); $writer->save('Posts History '.$tanggal.'.xlsx');
+
+// Save the Excel file
+$writer = new Xlsx($spreadsheet);
+$filename = 'Post_history.xlsx';
+$writer->save($filename);
+
+// Provide the file for download
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment;filename="' . $filename . '"');
+header('Cache-Control: max-age=0');
+readfile($filename);
+
+// Clean up - delete the file
+unlink($filename);
 header ("Location: Rtable.php");
 ?>

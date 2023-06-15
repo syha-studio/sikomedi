@@ -35,12 +35,11 @@ if ( isset($_POST["submit"])){
     <!-- Custom fonts for this template-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="css/style.css" rel="stylesheet">
 </head>
-<body class="bg-gradient-primary">
+<body style = "background : #E74926">
     <div class="container p-5">
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -49,7 +48,7 @@ if ( isset($_POST["submit"])){
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row justify-content-center">
-                            <div class="col-lg-7" style="background-color : #ADD8E6">
+                            <div class="col-lg-7" style = "background : #FADBD5">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h3 text-gray-900 mb-4">Sistem Kontrol <br>
@@ -64,7 +63,7 @@ if ( isset($_POST["submit"])){
                             </div>
                             <div class="col-lg-5">
                                 <div class="col d-flex justify-content-start pt-4 ps-4 pe-4" >
-                                        <a href="../index.php"><button type="button" class="btn btn-secondary"><i class="bi bi-back"></i> Kembali</button></a>
+                                        <a href="../index.php"><button type="button" class="btn" style = "background : #FADBD5; color : #010B13"><i class="bi bi-back"></i> Kembali</button></a>
                                 </div>
                                 <div class="pb-5 ps-4 pe-4"> 
                                     <hr>
@@ -89,7 +88,7 @@ if ( isset($_POST["submit"])){
                                             <input type="password" name="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password" autocomplete="off">
                                         </div>
-                                        <button type="submit" name="submit" class="btn btn-primary btn-user btn-block"><i class="bi bi-box-arrow-in-right"></i> Login</button> 
+                                        <button type="submit" name="submit" class="btn btn-user btn-block" style = "background : #E74926; color:white;"><i class="bi bi-box-arrow-in-right"></i> Login</button> 
                                     </form>
                                     <hr>
                                     <p class="text-center">Belum Punya Akun? <a href="register.php">Daftar</a></p>

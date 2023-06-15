@@ -231,7 +231,7 @@ require 'functions.php';
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Ahsa & Alya</span>
+                        <span>Copyright &copy; SIKOMEDI 2023</span>
                     </div>
                 </div>
             </footer>
@@ -274,9 +274,6 @@ require 'functions.php';
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
 </body>
 
 </html>

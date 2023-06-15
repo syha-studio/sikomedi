@@ -1,36 +1,56 @@
+
 <?php
-include('functions.php');
 require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
+// Establish database connection
+$host = 'localhost';
+$db = 'sikomedi';
+$user = 'root';
+$password = '';
+
+$conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+// Retrieve data from the database
+$query = $conn->query("SELECT COUNT(k.ID) AS 'CONTENTS', u.NAME name, u.EMAIL email, u.NOHP nohp FROM konten_history k
+                JOIN users u ON (k.USER_ID=u.ID) GROUP BY u.NAME ORDER BY CONTENTS DESC LIMIT 10");
+
+// Create a new Excel file
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
+
+// Set up headers
 $sheet->setCellValue('A1','No');
 $sheet->setCellValue('B1','Nama');
 $sheet->setCellValue('C1','Email');
 $sheet->setCellValue('D1','No HP');
 $sheet->setCellValue('E1','Total Contents');
-$query = mysqli_query($conn,"SELECT COUNT(k.ID) AS 'CONTENTS', u.NAME name, u.EMAIL email, u.NOHP nohp FROM konten_history k
-        JOIN users u ON (k.USER_ID=u.ID) GROUP BY u.NAME ORDER BY CONTENTS DESC LIMIT 10");
-$i=2; $no = 1;
-while($row = mysqli_fetch_array($query)){
-    $sheet->setCellValue('A'.$i,$no++);
-    $sheet->setCellValue('B'.$i,$row['nama']);
-    $sheet->setCellValue('C'.$i,$row['email']);
-    $sheet->setCellValue('D'.$i,$row['nohp']);
-    $sheet->setCellValue('E'.$i,$row['CONTENTS']);
-    $i++;}
-$styleArray = [
-    'borders' => [
-        'allborder' => [
-            'borderstyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
-        ],
-    ],
-];
-$i = $i - 1;
-$sheet->getStyle('A1:D'.$i)->applyFromArray($styleArray);
-$tanggal = date('D m y');
-$writer = new Xlsx($spreadsheet); $writer->save('Top 10 Content Contributor '.$tanggal.'.xlsx');
+
+// Populate data
+$row = 2; $no = 1;
+while ($data = $query->fetch(PDO::FETCH_ASSOC)) {
+    $sheet->setCellValue('A'.$row,$no++);
+    $sheet->setCellValue('B'.$row,$data["nama"]);
+    $sheet->setCellValue('C'.$row,$data["email"]);
+    $sheet->setCellValue('D'.$row,$data["nohp"]);
+    $sheet->setCellValue('E'.$row,$data["CONTENTS'"]);
+    $row++;
+}
+
+// Save the Excel file
+$writer = new Xlsx($spreadsheet);
+$filename = 'Top_10_Content_Contributor.xlsx';
+$writer->save($filename);
+
+// Provide the file for download
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment;filename="' . $filename . '"');
+header('Cache-Control: max-age=0');
+readfile($filename);
+
+// Clean up - delete the file
+unlink($filename);
 header ("Location: Rchart.php");
 ?>
