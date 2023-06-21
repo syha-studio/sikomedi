@@ -41,4 +41,3 @@ readfile($filename);
 // Clean up - delete the file
 unlink($filename);
 header ("Location: Rtable.php");
-?>

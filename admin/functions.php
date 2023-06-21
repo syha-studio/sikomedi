@@ -99,4 +99,3 @@ function query ($query){
         move_uploaded_file($tmpName,'../../../assets/img/'. $namaFileBaru);
         return $namaFileBaru;
     }
-?>

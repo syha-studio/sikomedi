@@ -1,21 +1,22 @@
 <?php
 session_start();
-if (!isset($_SESSION["admin"])){
-  header ("Location: login.php");
-  exit;
+if (!isset($_SESSION["admin"])) {
+    header("Location: login.php");
+    exit;
 }
 require 'functions.php';
 require 'tampilan.php';
 // Query
-    $postqueue = query("SELECT count(ID) a FROM konten_history WHERE STATUS_ID = 1");
-    $postuploaded = query("SELECT count(ID) a FROM konten_history WHERE STATUS_ID = 2");
-    $postrejected = query("SELECT count(ID) a FROM konten_history WHERE STATUS_ID = 3");
-    $konten = query("SELECT u.NAME user, m.NAMA media, j.NAMA jenis,  k.TANGGALPOSTING tanggal, k.JUDULPOSTING judul, s.NAMA as `status` FROM konten_history k
+$postqueue = query("SELECT count(ID) a FROM konten_history WHERE STATUS_ID = 1");
+$postuploaded = query("SELECT count(ID) a FROM konten_history WHERE STATUS_ID = 2");
+$postrejected = query("SELECT count(ID) a FROM konten_history WHERE STATUS_ID = 3");
+$konten = query("SELECT u.NAME user, m.NAMA media, j.NAMA jenis,  k.TANGGALPOSTING tanggal, k.JUDULPOSTING judul, s.NAMA as `status` FROM konten_history k
                         JOIN users u ON (k.USER_ID = u.ID) JOIN media m ON (k.MEDIA_ID = m.ID) JOIN status_konten s ON (k.STATUS_ID = s.ID)
                         JOIN jenis_konten j ON (m.JENIS_ID = j.ID) ORDER BY `status`, tanggal DESC");
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,133 +28,134 @@ require 'tampilan.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/a41efb1c83.js" crossorigin="anonymous"></script>
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
-    <?=sidetop()?>
-            <!-- Begin Page Content -->
-                <div class="container-fluid">
-                <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Summary</h1>
-                    </div>
-                <!-- Content Row -->
-                    <div class="row">
-                    <!-- Total Post Uploaded -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-dark shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total Post Uploaded</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format($postuploaded[0]["a"], 0, ' , ', ' ')?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="bi bi-images text-gray-300" style="font-size: 3rem;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <!-- Total Post Rejected -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-dark shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total Post Rejected</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format($postrejected[0]["a"], 0, ' , ', ' ')?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="bi bi-images text-gray-300" style="font-size: 3rem;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <!-- Total Post Queue -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-dark shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total Post Queue</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format($postqueue[0]["a"], 0, ' , ', ' ')?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="bi bi-images text-gray-300" style="font-size: 3rem;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Content Row -->
-                    <div class="row">
-                    <!-- Table Summary -->
-                        <div class="col-xl-12 col-lg-10">
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3 d-flex justify-content-between">
-                                    <div class="align-middle">
-                                        <h6 class="m-0 font-weight-bold text-primary">Posts History</h6>
-                                    </div>
-                                    <div class="align-middle text-end">
-                                        <a href="exporthistoryPdf.php"><button type="button" class="btn btn-secondary btn-sm">Print PDF</button></a>
-                                        <a href="exporthistoryExcel.php"><button type="button" class="btn btn-secondary btn-sm">Print Excel</button></a>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-center p-2 pb-2 overflow-y-scroll" style="max-height: 30rem;">
-                                    <table class="table align-middle">
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>User</th>
-                                            <th>Media</th>
-                                            <th>Jenis</th>
-                                            <th>Tanggal Posting</th>
-                                            <th>Judul Postingan</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    <?php $i=1; foreach ($konten as $row) : ?>
-                                    <tr>
-                                        <td><?=$i?></td>
-                                        <td><?= $row["user"]?></td>
-                                        <td><?= $row["media"]?></td>
-                                        <td><?= $row["jenis"]?></td>
-                                        <td><?= $row["tanggal"]?></td>
-                                        <td><?= $row["judul"]?></td>
-                                        <td><?= $row["status"]?></td>
-                                    </tr>
-                                    <?php $i++; endforeach ?>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.container-fluid -->
+        <?= sidetop() ?>
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Summary</h1>
             </div>
-            <!-- End of Main Content -->
-        <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; SIKOMEDI 2023</span>
+            <!-- Content Row -->
+            <div class="row">
+                <!-- Total Post Uploaded -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-dark shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Total Post Uploaded</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format($postuploaded[0]["a"], 0, ' , ', ' ') ?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="bi bi-images text-gray-300" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-
+                <!-- Total Post Rejected -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-dark shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Total Post Rejected</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format($postrejected[0]["a"], 0, ' , ', ' ') ?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="bi bi-images text-gray-300" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Total Post Queue -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-dark shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Total Post Queue</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format($postqueue[0]["a"], 0, ' , ', ' ') ?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="bi bi-images text-gray-300" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Row -->
+            <div class="row">
+                <!-- Table Summary -->
+                <div class="col-xl-12 col-lg-10">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex justify-content-between">
+                            <div class="align-middle">
+                                <h6 class="m-0 font-weight-bold text-primary">Posts History</h6>
+                            </div>
+                            <div class="align-middle text-end">
+                                <a href="exporthistoryPdf.php"><button type="button" class="btn btn-secondary btn-sm">Print PDF</button></a>
+                                <a href="exporthistoryExcel.php"><button type="button" class="btn btn-secondary btn-sm">Print Excel</button></a>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center p-2 pb-2 overflow-y-scroll" style="max-height: 30rem;">
+                            <table class="table align-middle">
+                                <tr>
+                                    <th>No.</th>
+                                    <th>User</th>
+                                    <th>Media</th>
+                                    <th>Jenis</th>
+                                    <th>Tanggal Posting</th>
+                                    <th>Judul Postingan</th>
+                                    <th>Status</th>
+                                </tr>
+                                <?php $i = 1;
+                                foreach ($konten as $row) : ?>
+                                    <tr>
+                                        <td><?= $i ?></td>
+                                        <td><?= $row["user"] ?></td>
+                                        <td><?= $row["media"] ?></td>
+                                        <td><?= $row["jenis"] ?></td>
+                                        <td><?= $row["tanggal"] ?></td>
+                                        <td><?= $row["judul"] ?></td>
+                                        <td><?= $row["status"] ?></td>
+                                    </tr>
+                                <?php $i++;
+                                endforeach ?>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; SIKOMEDI 2023</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
     <!-- Scroll to Top Button-->
@@ -161,9 +163,8 @@ require 'tampilan.php';
         <i class="fas fa-angle-up"></i>
     </a>
 
-<!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -179,7 +180,7 @@ require 'tampilan.php';
             </div>
         </div>
     </div>
-<!-- Script Default -->
+    <!-- Script Default -->
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -37,4 +37,3 @@ $dompdf ->render();
 $dompdf ->stream('Top_10_Contributor.pdf');
 
 header ("Location: Rchart.php");
-?>

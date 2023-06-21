@@ -23,4 +23,3 @@ if (rejectcontent($id)){
       </script>
     ";
   }
-?>

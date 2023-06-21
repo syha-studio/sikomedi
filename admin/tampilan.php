@@ -98,4 +98,3 @@ echo "<!-- Sidebar -->
         </nav>
         <!-- End of Topbar -->";
 }
-?>

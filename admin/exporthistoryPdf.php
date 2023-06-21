@@ -42,4 +42,3 @@ $dompdf ->render();
 $dompdf ->stream('Konten_History.pdf');
 
 header ("Location: Rtable.php");
-?>

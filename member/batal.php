@@ -23,4 +23,3 @@ if ( batalsubmit($id)){
       </script>
     ";
   }
-?>

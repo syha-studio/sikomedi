@@ -1,10 +1,11 @@
 <?php
 require 'functions.php';
 // query
-  $latestpost = query("SELECT * FROM instagram");
+$latestpost = query("SELECT * FROM instagram");
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -26,9 +27,10 @@ require 'functions.php';
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- ======= Header ======= -->
+  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
@@ -54,7 +56,7 @@ require 'functions.php';
     </div>
   </header><!-- End Header -->
 
-<!-- ======= Hero Section ======= -->
+  <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-content-center align-items-center">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Welcome to Sikomedi,<br>Fasilkom</h1>
@@ -65,7 +67,7 @@ require 'functions.php';
 
   <main id="main">
 
-<!-- ======= About Section ======= -->
+    <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container pt-5 mt-1" data-aos="fade-up">
 
@@ -84,12 +86,12 @@ require 'functions.php';
               Sistem Informasi Kontrol Media Sosial
             </p>
             <p>
-              "SIKOMEDI merupakan sebuah sistem informasi yang dirancang dan digunakan 
+              "SIKOMEDI merupakan sebuah sistem informasi yang dirancang dan digunakan
               untuk mengelola dan mengontrol aktivitas media sosial, khususnya instagram, yang terkait dengan fakultas
               dan program studi yang ada di fakultas ilmu komputer."<br>
-              <br>Sikomedi dikembangkan dengan tujuan untuk membantu fakultas dalam mengelola dan mengawasi kegiatan 
-              yang terkait dengan media sosial, <br>seperti mengelola postingan, memantau interaksi pengguna, 
-              merencanakan dan menjalankan kampanye di media sosial, serta menganalisis kinerja dan dampak dari aktivitas 
+              <br>Sikomedi dikembangkan dengan tujuan untuk membantu fakultas dalam mengelola dan mengawasi kegiatan
+              yang terkait dengan media sosial, <br>seperti mengelola postingan, memantau interaksi pengguna,
+              merencanakan dan menjalankan kampanye di media sosial, serta menganalisis kinerja dan dampak dari aktivitas
               media sosial yang dilakukan.
             </p>
           </div>
@@ -97,54 +99,54 @@ require 'functions.php';
       </div>
     </section><!-- End About Section -->
 
-<!-- ======= Instagram Section ======= -->
-  <section id="instagram" class="instagram">
-  <div class="container pt-5 mt-5" data-aos="fade-up">
+    <!-- ======= Instagram Section ======= -->
+    <section id="instagram" class="instagram">
+      <div class="container pt-5 mt-5" data-aos="fade-up">
 
-    <div class="section-title pt-3">
-      <h2>Media</h2>
-      <p>Our Instagram</p>
-    </div>
-
-      <div class="row d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-4">
-          <div class="icon-box">
-            <h3><a href="https://www.instagram.com/fasilkom.upnvjatim">Fasilkom</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-4">
-          <div class="icon-box">
-            <h3><a href="https://www.instagram.com/informatika.upnvjatim">Teknik Informatika</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-4">
-          <div class="icon-box">
-            <h3><a href="https://www.instagram.com/sisfo_upnjatim">Sistem Informasi</a></h3>
-          </div>
-        </div>
+        <div class="section-title pt-3">
+          <h2>Media</h2>
+          <p>Our Instagram</p>
         </div>
 
         <div class="row d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-4">
-          <div class="icon-box">
-            <h3><a href="https://www.instagram.com/sada.upnjatim">Sains Data</a></h3>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-4">
+            <div class="icon-box">
+              <h3><a href="https://www.instagram.com/fasilkom.upnvjatim">Fasilkom</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-4">
+            <div class="icon-box">
+              <h3><a href="https://www.instagram.com/informatika.upnvjatim">Teknik Informatika</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-4">
+            <div class="icon-box">
+              <h3><a href="https://www.instagram.com/sisfo_upnjatim">Sistem Informasi</a></h3>
+            </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <h3><a href="https://www.instagram.com/bisdi.upnvjatim">Bisnis Digital</a></h3>
+
+        <div class="row d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4">
+            <div class="icon-box">
+              <h3><a href="https://www.instagram.com/sada.upnjatim">Sains Data</a></h3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <h3><a href="https://www.instagram.com/mti.upnjatim">Magister Teknik Informatika</a></h3>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <h3><a href="https://www.instagram.com/bisdi.upnvjatim">Bisnis Digital</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <h3><a href="https://www.instagram.com/mti.upnjatim">Magister Teknik Informatika</a></h3>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section><!-- End Instagram Section -->
+    </section><!-- End Instagram Section -->
 
-<!-- ======= Latest Post Section ======= -->
+    <!-- ======= Latest Post Section ======= -->
     <section id="latestpost" class="latestpost">
       <div class="container pt-5 mt-1" data-aos="fade-up">
         <div class="section-title">
@@ -152,70 +154,70 @@ require 'functions.php';
           <p>Latest Post</p>
         </div>
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
-          <?php foreach ($latestpost as $row) :?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-              <a href="<?=$row["URL"]?>"><img src="assets\img\<?=$row["SOURCE"]?>" class="img-fluid" alt="..."></a>
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4><?=$row["MEDIA"]?></h4>
-                  <p class="instagram">@<?=$row["IG"]?></p>
+          <?php foreach ($latestpost as $row) : ?>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="course-item">
+                <a href="<?= $row["URL"] ?>"><img src="assets\img\<?= $row["SOURCE"] ?>" class="img-fluid" alt="..."></a>
+                <div class="course-content">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4><?= $row["MEDIA"] ?></h4>
+                    <p class="instagram">@<?= $row["IG"] ?></p>
+                  </div>
+                  <h3><a href="<?= $row["URL"] ?>"><?= $row["JUDULPOSTINGAN"] ?></a></h3>
+                  <p><?= $row["CAPTION"] ?></p>
                 </div>
-                <h3><a href="<?=$row["URL"]?>"><?=$row["JUDULPOSTINGAN"]?></a></h3>
-                <p><?=$row["CAPTION"]?></p>
               </div>
-            </div>
-          </div> <!-- End Latest Post Item-->
+            </div> <!-- End Latest Post Item-->
           <?php endforeach ?>
 
 
-  <!-- ======= Guides Section ======= -->  
-    <section id="guides">
-      <div class="container pt-5 mt-1" data-aos="fade-up">
+          <!-- ======= Guides Section ======= -->
+          <section id="guides">
+            <div class="container pt-5 mt-1" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Guides</h2>
-          <p>SIKOMEDI Guides</p>
-        </div>
-        <div class="accordion pt-0" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                Registration & Login for Members
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-              <p>
-                1. Pilih opsi "Member" pada navbar yang terletak di bagian kanan atas. <br>
-                2. Jika belum terdaftar sebagai member, pilih "Daftar". <br>
-                3. Isi dan submit data pada formulir registrasi, termasuk username, email, nomor HP, dan password. <br>
-                4. Admin akan melakukan verifikasi dan validasi data tersebut. <br>
-                5. Pemberitahuan aktivasi akun akan dikirimkan melalui email. <br>
-                6. Lakukan login ke akun dengan memasukkan username dan password. <br>
-                </p>
+              <div class="section-title">
+                <h2>Guides</h2>
+                <p>SIKOMEDI Guides</p>
               </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Content Submissions
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>
-                7. Setelah berhasil login, member dapat mengakses dashboard dan memilih opsi "Submission" dari menu. <br>
-                8. Pilih opsi "Buat Permintaan" untuk mengajukan permintaan upload konten.
-                </p>
+              <div class="accordion pt-0" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Registration & Login for Members
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p>
+                        1. Pilih opsi "Member" pada navbar yang terletak di bagian kanan atas. <br>
+                        2. Jika belum terdaftar sebagai member, pilih "Daftar". <br>
+                        3. Isi dan submit data pada formulir registrasi, termasuk username, email, nomor HP, dan password. <br>
+                        4. Admin akan melakukan verifikasi dan validasi data tersebut. <br>
+                        5. Pemberitahuan aktivasi akun akan dikirimkan melalui email. <br>
+                        6. Lakukan login ke akun dengan memasukkan username dan password. <br>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Content Submissions
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p>
+                        7. Setelah berhasil login, member dapat mengakses dashboard dan memilih opsi "Submission" dari menu. <br>
+                        8. Pilih opsi "Buat Permintaan" untuk mengajukan permintaan upload konten.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </section><!-- End Guides Section -->
+            </div>
+          </section><!-- End Guides Section -->
 
   </main><!-- End #main -->
 
@@ -233,7 +235,7 @@ require 'functions.php';
               Website Programming<br>
               Parallel-A <br><br>
               <strong>Syauqillah Hadie Ahsa</strong> 21082010042<br>
-              <strong>Alya Fatin Fadhiyah  </strong> 21082010027<br>
+              <strong>Alya Fatin Fadhiyah </strong> 21082010027<br>
             </p>
           </div>
 
@@ -250,7 +252,7 @@ require 'functions.php';
             </ul>
           </div>
 
-          
+
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Media</h4>
             <ul>

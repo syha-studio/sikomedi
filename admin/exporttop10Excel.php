@@ -1,6 +1,7 @@
 
 <?php
 require 'vendor/autoload.php';
+
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -22,20 +23,21 @@ $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
 
 // Set up headers
-$sheet->setCellValue('A1','No');
-$sheet->setCellValue('B1','Nama');
-$sheet->setCellValue('C1','Email');
-$sheet->setCellValue('D1','No HP');
-$sheet->setCellValue('E1','Total Contents');
+$sheet->setCellValue('A1', 'No');
+$sheet->setCellValue('B1', 'Nama');
+$sheet->setCellValue('C1', 'Email');
+$sheet->setCellValue('D1', 'No HP');
+$sheet->setCellValue('E1', 'Total Contents');
 
 // Populate data
-$row = 2; $no = 1;
+$row = 2;
+$no = 1;
 while ($data = $query->fetch(PDO::FETCH_ASSOC)) {
-    $sheet->setCellValue('A'.$row,$no++);
-    $sheet->setCellValue('B'.$row,$data["nama"]);
-    $sheet->setCellValue('C'.$row,$data["email"]);
-    $sheet->setCellValue('D'.$row,$data["nohp"]);
-    $sheet->setCellValue('E'.$row,$data["CONTENTS'"]);
+    $sheet->setCellValue('A' . $row, $no++);
+    $sheet->setCellValue('B' . $row, $data["nama"]);
+    $sheet->setCellValue('C' . $row, $data["email"]);
+    $sheet->setCellValue('D' . $row, $data["nohp"]);
+    $sheet->setCellValue('E' . $row, $data["CONTENTS'"]);
     $row++;
 }
 
@@ -52,5 +54,5 @@ readfile($filename);
 
 // Clean up - delete the file
 unlink($filename);
-header ("Location: Rchart.php");
+header("Location: Rchart.php");
 ?>
